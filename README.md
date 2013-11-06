@@ -1,6 +1,10 @@
 # Faraday::Digestauth
 
-TODO: Write a gem description
+This gem started as a direct copy of a gist belonging to @kapkaev
+
+It is located at https://gist.github.com/kapkaev/5088751
+
+I merely gemmed it up so that I could use it in multiple places.
 
 ## Installation
 
@@ -18,7 +22,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require 'faraday'
+require 'faraday/digestauth'
+
+@conn = Faraday.new(url: HOSTNAME) do |f|
+  f.request :digest, USERNAME, PASSWORD
+  f.adapter  Faraday.default_adapter
+end
+
+@conn.get 'resource'
+```
 
 ## Contributing
 
