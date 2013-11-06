@@ -1,4 +1,4 @@
-# Faraday::Digestauth
+# Faraday::DigestAuth
 
 This gem started as a direct copy of a gist belonging to @kapkaev
 
