@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'faraday'
 require 'faraday/digestauth/version'
 require 'net/http/digest_auth'
@@ -23,8 +24,6 @@ module Faraday
   #   connection.digest_auth('USER', 'PASSWORD')
   #
   class Request::DigestAuth < Faraday::Middleware
-
-
     # Public: Initializes a DigestAuth.
     #
     # app      - The Faraday app.
@@ -34,7 +33,6 @@ module Faraday
       super(app)
       @user, @password = user, password
     end
-
 
     # Public: Sends a first request with an empty body to get the
     # authentication headers and then send the same request with the body and
@@ -47,13 +45,12 @@ module Faraday
       response = handshake(env)
       return response unless response.status == 401
 
-
       env[:request_headers]['Authorization'] = header(response)
       @app.call(env)
     end
 
-
     private
+
     # Internal: Sends the the request with an empry body.
     #
     # env - A Hash with the request environment.
@@ -65,7 +62,6 @@ module Faraday
       @app.call(env_without_body)
     end
 
-
     # Internal: Builds the authorization header with the authentication data.
     #
     # response - A Faraday::Response with the authenticate headers.
@@ -76,10 +72,8 @@ module Faraday
       uri.user = @user
       uri.password = @password
 
-
       realm = response.headers['www-authenticate']
       method = response.env[:method].to_s.upcase
-
 
       Net::HTTP::DigestAuth.new.auth_header(uri, realm, method)
     end
@@ -97,7 +91,6 @@ module Faraday
     end
   end
 end
-
 
 # Register the middleware as a Request middleware with the name :digest
 Faraday.register_middleware :request, digest: Faraday::Request::DigestAuth
