@@ -93,4 +93,8 @@ module Faraday
 end
 
 # Register the middleware as a Request middleware with the name :digest
-Faraday.register_middleware :request, digest: Faraday::Request::DigestAuth
+if Faraday::Request.respond_to? :register_middleware
+  Faraday::Request.register_middleware digest: -> {Faraday::Request::DigestAuth}
+else
+  Faraday.register_middleware :request, digest: Faraday::Request::DigestAuth
+end
