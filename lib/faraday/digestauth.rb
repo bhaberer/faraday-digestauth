@@ -6,4 +6,8 @@ require 'faraday/connection'
 require 'faraday/request/digestauth'
 
 # Register the middleware as a Request middleware with the name :digest
-Faraday.register_middleware :request, digest: Faraday::Request::DigestAuth
+if Faraday.respond_to?(:register_middleware)
+  Faraday.register_middleware :request, :digest => Faraday::Request::DigestAuth
+else
+  Faraday::Request.register_middleware :digest => Faraday::Request::DigestAuth
+end
