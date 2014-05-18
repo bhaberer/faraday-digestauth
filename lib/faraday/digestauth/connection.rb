@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 module Faraday
-  class Connection
+  module DigestAuth::Connection
     # Public: Adds the digest auth middleware at the top and sets the user and
     # password.
     #
@@ -12,3 +12,5 @@ module Faraday
     end
   end
 end
+
+Faraday::Connection.send :include, Faraday::DigestAuth::Connection
