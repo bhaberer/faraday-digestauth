@@ -8,9 +8,7 @@
 
 This gem started as a direct copy of a gist belonging to @kapkaev
 
-It is located at https://gist.github.com/kapkaev/5088751
-
-I merely gemmed it up so that I could use it in multiple places.
+The original source is located at https://gist.github.com/kapkaev/5088751
 
 ## Installation
 
