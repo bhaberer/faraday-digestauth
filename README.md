@@ -1,5 +1,11 @@
 # Faraday::DigestAuth
 
+[![Gem Version](https://badge.fury.io/rb/faraday-digestauth.png)](http://badge.fury.io/rb/faraday-digestauth)
+[![Dependency Status](https://gemnasium.com/bhaberer/faraday-digestauth.png)](https://gemnasium.com/bhaberer/faraday-digestauth)
+[![Build Status](https://travis-ci.org/bhaberer/faraday-digestauth.png?branch=master)](https://travis-ci.org/bhaberer/faraday-digestauth)
+[![Coverage Status](https://coveralls.io/repos/bhaberer/faraday-digestauth/badge.png?branch=master)](https://coveralls.io/r/bhaberer/faraday-digestauth?branch=m    aster)
+[![Code Climate](https://codeclimate.com/github/bhaberer/faraday-digestauth.png)](https://codeclimate.com/github/bhaberer/faraday-digestauth)
+
 This gem started as a direct copy of a gist belonging to @kapkaev
 
 It is located at https://gist.github.com/kapkaev/5088751
