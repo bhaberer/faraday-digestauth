@@ -10,8 +10,8 @@ describe Faraday::Request::DigestAuth do
 
   describe 'when the server does not return a 401' do
     it 'does nothing' do
-      stub_request(:get, 'http://api.example.org/productions/1').
-        to_return(status: 500, body: 'Foo body')
+      stub_request(:get, 'http://api.example.org/productions/1')
+        .to_return(status: 500, body: 'Foo body')
 
       response = connection.get('/productions/1')
       expect(response.body).to eq 'Foo body'
@@ -22,15 +22,15 @@ describe Faraday::Request::DigestAuth do
     let(:first_call_headers) { 'Digest realm="MyApp", algorithm=MD5' }
     let(:second_call_headers) { 'Digest username="USER", realm="MyApp", uri="/", algorithm="MD5"' }
     it 'authenticates using digest' do
-      stub_request(:get, 'http://api.example.org/productions/1').
-        with(body: nil).
-        to_return(status: 401, headers: {'www-authenticate' => first_call_headers})
+      stub_request(:get, 'http://api.example.org/productions/1')
+        .with(body: nil)
+        .to_return(status: 401, headers: { 'www-authenticate' => first_call_headers })
 
-      stub_request(:get, 'http://api.example.org/productions/1').
-        with(body: "{\"foo\":1}",
-             headers: {'Authorization' => %r{second_call_headers}}).
-             to_return(body: '{"resource": "This is the resource"}',
-                       headers: {content_type: 'application/json'})
+      stub_request(:get, 'http://api.example.org/productions/1')
+        .with(body: "{\"foo\":1}",
+              headers: { 'Authorization' => %r{second_call_headers} })
+             .to_return(body: '{"resource": "This is the resource"}',
+                        headers: { content_type: 'application/json' })
 
       connection.get('/productions/1')
     end

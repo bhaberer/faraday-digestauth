@@ -6,10 +6,6 @@
 [![Coverage Status](https://coveralls.io/repos/bhaberer/faraday-digestauth/badge.png?branch=master)](https://coveralls.io/r/bhaberer/faraday-digestauth?branch=m    aster)
 [![Code Climate](https://codeclimate.com/github/bhaberer/faraday-digestauth.png)](https://codeclimate.com/github/bhaberer/faraday-digestauth)
 
-This gem started as a direct copy of a gist belonging to @kapkaev
-
-The original source is located at https://gist.github.com/kapkaev/5088751
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -45,3 +41,11 @@ end
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## History
+
+This gem was extracted from [Hyperclient](https://github.com/codegram/hyperclient) by [@oriolgual](https://github.com/oriolgual).
+
+## License
+
+MIT License, see [LICENSE](LICENSE.txt) for details.
