@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
   spec.version       = Faraday::DigestAuth::VERSION
   spec.authors       = ['Brian Haberer', 'Ildar Kapkaev']
   spec.email         = ['bhaberer@gmail.com', 'kirs.box@gmail.com']
-  spec.description   = %q{Faraday extension to enable digest auth}
-  spec.summary       = %q{Digest Auth for Faraday}
+  spec.description   = 'Faraday extension to enable digest auth'
+  spec.summary       = 'Digest Auth for Faraday'
   spec.homepage      = 'https://github.com/bhaberer/faraday-digestauth'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10'
   spec.add_development_dependency 'rspec', '~> 3'
   spec.add_development_dependency 'coveralls', '~> 0.1'
+  spec.add_development_dependency 'rubocop', '~> 0.26.1'
 end
