@@ -8,3 +8,4 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start
 
 require 'faraday/digestauth'
+require 'webmock/rspec'
