@@ -6,8 +6,8 @@ require 'faraday/digestauth/version'
 Gem::Specification.new do |spec|
   spec.name          = 'faraday-digestauth'
   spec.version       = Faraday::DigestAuth::VERSION
-  spec.authors       = ['Brian Haberer', 'Ildar Kapkaev']
-  spec.email         = ['bhaberer@gmail.com', 'kirs.box@gmail.com']
+  spec.authors       = ['Brian Haberer', 'Oriol Gual']
+  spec.email         = ['bhaberer@gmail.com', 'oriol.gual@gmail.com']
   spec.description   = 'Faraday extension to enable digest auth'
   spec.summary       = 'Digest Auth for Faraday'
   spec.homepage      = 'https://github.com/bhaberer/faraday-digestauth'
