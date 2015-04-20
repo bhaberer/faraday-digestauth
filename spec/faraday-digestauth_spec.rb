@@ -29,8 +29,8 @@ describe Faraday::Request::DigestAuth do
       stub_request(:get, 'http://api.example.org/productions/1')
         .with(body: "{\"foo\":1}",
               headers: { 'Authorization' => %r{second_call_headers} })
-             .to_return(body: '{"resource": "This is the resource"}',
-                        headers: { content_type: 'application/json' })
+        .to_return(body: '{"resource": "This is the resource"}',
+                   headers: { content_type: 'application/json' })
 
       connection.get('/productions/1')
     end

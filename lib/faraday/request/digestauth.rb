@@ -59,9 +59,7 @@ module Faraday
       # Returns a Faraday::Response.
       def handshake(env)
         env_without_body = env.dup
-        unless @opts[:keep_body_on_handshake]
-          env_without_body.delete(:body)
-        end
+        env_without_body.delete(:body) unless @opts[:keep_body_on_handshake]
         @app.call(env_without_body)
       end
 
