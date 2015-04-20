@@ -26,9 +26,13 @@ module Faraday
       # app      - The Faraday app.
       # user     - A String with the user to authentication the connection.
       # password - A String with the password to authentication the connection.
-      def initialize(app, user, password)
+      # opts     - A hash with options
+      #            - keep_body_on_handshake: if set to truthy, will also send
+      #              the original request body
+      def initialize(app, user, password, opts = {})
         super(app)
         @user, @password = user, password
+        @opts = opts
       end
 
       # Public: Sends a first request with an empty body to get the
@@ -55,7 +59,9 @@ module Faraday
       # Returns a Faraday::Response.
       def handshake(env)
         env_without_body = env.dup
-        env_without_body.delete(:body)
+        unless @opts[:keep_body_on_handshake]
+          env_without_body.delete(:body)
+        end
         @app.call(env_without_body)
       end
 
