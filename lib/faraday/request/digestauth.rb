@@ -31,7 +31,8 @@ module Faraday
       #              the original request body
       def initialize(app, user, password, opts = {})
         super(app)
-        @user, @password = user, password
+        @user = user
+        @password = password
         @opts = opts
       end
 
