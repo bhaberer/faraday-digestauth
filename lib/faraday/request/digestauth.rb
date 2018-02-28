@@ -46,6 +46,7 @@ module Faraday
       def call(env)
         response = handshake(env)
         return response unless response.status == 401
+        return response unless response.headers['www-authenticate'] =~ /Digest +[^\s]+/
 
         env[:request_headers]['Authorization'] = header(response)
         @app.call(env)
