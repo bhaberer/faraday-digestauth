@@ -71,8 +71,8 @@ module Faraday
       # Returns a String with the DigestAuth header.
       def header(response)
         uri = response.env[:url]
-        uri.user = @user
-        uri.password = @password
+        uri.user = CGI.escape @user
+        uri.password = CGI.escape @password
 
         realm = response.headers['www-authenticate']
         method = response.env[:method].to_s.upcase
