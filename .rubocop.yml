@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 AllCops:
   Exclude:
     - vendor/**/*
@@ -47,6 +49,12 @@ PerlBackrefs:
 BlockNesting:
   # TODO: fix too much nesting
   Max: 4
+
+Style/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
 
 Lambda:
   # TODO: replace all lambda with -> or Proc
