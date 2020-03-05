@@ -44,7 +44,9 @@ end
 
 ## History
 
-This gem was extracted from [Hyperclient](https://github.com/codegram/hyperclient) by [@oriolgual](https://github.com/oriolgual).
+This gem was extracted from [Hyperclient](https://github.com/codegram/hyperclient) by [@oriolgual](https://github.com/oriolgual) and turned into a gem by [@bhaberer](https://github.com/bhaberer). 
+
+Note: I'm not actively maintaining or managing this gem any longer, as I no longer work on projects using digest auth, if you would like to help maintain this gem please let me know. 
 
 ## License
 
