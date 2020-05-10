@@ -1,37 +1,36 @@
 # Faraday::DigestAuth
 
-[![Gem Version](https://badge.fury.io/rb/faraday-digestauth.png)](http://badge.fury.io/rb/faraday-digestauth)
-[![Dependency Status](https://gemnasium.com/bhaberer/faraday-digestauth.png)](https://gemnasium.com/bhaberer/faraday-digestauth)
-[![Build Status](https://travis-ci.org/bhaberer/faraday-digestauth.png?branch=master)](https://travis-ci.org/bhaberer/faraday-digestauth)
-[![Coverage Status](https://coveralls.io/repos/bhaberer/faraday-digestauth/badge.png?branch=master)](https://coveralls.io/r/bhaberer/faraday-digestauth?branch=master)
-[![Code Climate](https://codeclimate.com/github/bhaberer/faraday-digestauth.png)](https://codeclimate.com/github/bhaberer/faraday-digestauth)
+[![Gem Version](https://badge.fury.io/rb/faraday-digestauth.svg)](https://badge.fury.io/rb/faraday-digestauth)
+[![Build Status](https://travis-ci.org/bhaberer/faraday-digestauth.svg?branch=master)](https://travis-ci.org/bhaberer/faraday-digestauth)
+[![Coverage Status](https://coveralls.io/repos/bhaberer/faraday-digestauth/badge.svg?branch=master)](https://coveralls.io/r/bhaberer/faraday-digestauth?branch=master)
+[![Code Climate](https://codeclimate.com/github/bhaberer/faraday-digestauth.svg)](https://codeclimate.com/github/bhaberer/faraday-digestauth)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'faraday-digestauth'
+```ruby
+gem 'faraday-digestauth'
+```
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install faraday-digestauth
+```
+$ bundle install
+```
 
 ## Usage
 
-```
+```ruby
 require 'faraday'
 require 'faraday/digestauth'
 
-@conn = Faraday.new(url: HOSTNAME) do |f|
+conn = Faraday.new(url: HOSTNAME) do |f|
   f.request :digest, USERNAME, PASSWORD
-  f.adapter  Faraday.default_adapter
+  f.adapter Faraday.default_adapter
 end
 
-@conn.get 'resource'
+conn.get 'resource'
 ```
 
 ## Contributing
@@ -44,9 +43,9 @@ end
 
 ## History
 
-This gem was extracted from [Hyperclient](https://github.com/codegram/hyperclient) by [@oriolgual](https://github.com/oriolgual) and turned into a gem by [@bhaberer](https://github.com/bhaberer). 
+This gem was extracted from [Hyperclient](https://github.com/codegram/hyperclient) by [@oriolgual](https://github.com/oriolgual) and turned into a gem by [@bhaberer](https://github.com/bhaberer).
 
-Note: I'm not actively maintaining or managing this gem any longer, as I no longer work on projects using digest auth, if you would like to help maintain this gem please let me know. 
+Note: I'm not actively maintaining or managing this gem any longer, as I no longer work on projects using digest auth, if you would like to help maintain this gem please let me know.
 
 ## License
 
