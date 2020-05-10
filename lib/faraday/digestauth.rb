@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
+
 require 'net/http/digest_auth'
 require 'faraday'
 require 'faraday/digestauth/version'

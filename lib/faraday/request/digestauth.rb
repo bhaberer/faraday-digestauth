@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
+
 module Faraday
   class Request
     # Public: A Faraday middleware to use digest authentication. Since order of
@@ -46,7 +47,9 @@ module Faraday
       def call(env)
         response = handshake(env)
         return response unless response.status == 401
-        return response unless response.headers['www-authenticate'] =~ /Digest +[^\s]+/
+        unless response.headers['www-authenticate'] =~ /Digest +[^\s]+/
+          return response
+        end
 
         env[:request_headers]['Authorization'] = header(response)
         @app.call(env)

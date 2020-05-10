@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 context Faraday::Request::DigestAuth do
@@ -43,8 +45,8 @@ context Faraday::Request::DigestAuth do
         .with(body: nil)
         .to_return(status: 401, headers: { 'www-authenticate' => first_call_headers })
       stub_request(:get, 'http://api.example.org/productions/1')
-        .with(body: "{\"foo\":1}",
-              headers: { 'Authorization' => %r{second_call_headers} })
+        .with(body: '{"foo":1}',
+              headers: { 'Authorization' => /second_call_headers/ })
         .to_return(body: '{"resource": "This is the resource"}',
                    headers: { content_type: 'application/json' })
       connection.get('/productions/1')
