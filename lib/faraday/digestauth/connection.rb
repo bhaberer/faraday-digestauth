@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# frozen_string_literal: true
+
 module Faraday
   module DigestAuth
     # Connection methods
@@ -16,4 +17,4 @@ module Faraday
   end
 end
 
-Faraday::Connection.send :include, Faraday::DigestAuth::Connection
+Faraday::Connection.include Faraday::DigestAuth::Connection
