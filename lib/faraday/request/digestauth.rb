@@ -31,6 +31,13 @@ module Faraday
       #            - keep_body_on_handshake: if set to truthy, will also send
       #              the original request body
       def initialize(app, user, password, opts = {})
+        if user.nil?
+          raise ArgumentError, 'Username cannot be nil'
+        end
+        if password.nil?
+          raise ArgumentError, 'Password cannot be nil'
+        end
+
         super(app)
         @user = user
         @password = password

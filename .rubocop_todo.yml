@@ -10,7 +10,7 @@
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
 Metrics/BlockLength:
-  Max: 47
+  Max: 99
 
 # Offense count: 1
 # Cop supports --auto-correct.
