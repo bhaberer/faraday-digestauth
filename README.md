@@ -1,7 +1,6 @@
 # Faraday::DigestAuth
 
 [![Gem Version](https://badge.fury.io/rb/faraday-digestauth.svg)](https://badge.fury.io/rb/faraday-digestauth)
-[![Build Status](https://travis-ci.org/bhaberer/faraday-digestauth.svg?branch=master)](https://travis-ci.org/bhaberer/faraday-digestauth)
 [![Coverage Status](https://coveralls.io/repos/bhaberer/faraday-digestauth/badge.svg?branch=master)](https://coveralls.io/r/bhaberer/faraday-digestauth?branch=master)
 [![Code Climate](https://codeclimate.com/github/bhaberer/faraday-digestauth.svg)](https://codeclimate.com/github/bhaberer/faraday-digestauth)
 
