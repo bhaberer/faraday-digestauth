@@ -56,4 +56,34 @@ context Faraday::Request::DigestAuth do
       expect(response.body).to be_empty
     end
   end
+
+  context 'when the username is nil' do
+    let(:connection) do
+      Faraday.new('http://api.example.org/') do |builder|
+        builder.request :digest, nil, 'PASS'
+        builder.adapter :net_http
+      end
+    end
+
+    it 'raises ArgumentError during construction' do
+      expect do
+        connection.get('http://api.example.com')
+      end.to raise_error(ArgumentError, /Username cannot be nil/)
+    end
+  end
+
+  context 'when the password is nil' do
+    let(:connection) do
+      Faraday.new('http://api.example.org/') do |builder|
+        builder.request :digest, 'USER', nil
+        builder.adapter :net_http
+      end
+    end
+
+    it 'raises ArgumentError during construction' do
+      expect do
+        connection.get('http://api.example.com')
+      end.to raise_error(ArgumentError, /Password cannot be nil/)
+    end
+  end
 end
