@@ -10,8 +10,10 @@ install_if -> { ENV.fetch('FARADAY_VERSION', nil) } do
 end
 
 gem 'coveralls', '~> 0.1'
-gem 'rake', '~> 12.3.3'
+gem 'rake', '~> 12.3'
 gem 'rspec', '~> 3'
-gem 'rubocop', '0.82.0'
-gem 'rubocop-rspec', '1.39.0'
-gem 'webmock', '~> 3.8.3'
+gem 'rubocop', '~> 1.62'
+gem 'rubocop-packaging', '~> 0.5'
+gem 'rubocop-performance', '~> 1.20'
+gem 'rubocop-rspec', '~> 2.27'
+gem 'webmock', '~> 3.23'
